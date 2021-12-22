@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代預約服務</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="..\fontawesome-free-5.15.4\css\all.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <!-- Date Time Picker -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/css/tempusdominus-bootstrap-4.css" integrity="sha512-ClXpwbczwauhl7XC16/EFu3grIlYTpqTYOwqwAi7rNSqxmTqCpE8VS3ovG+qi61GoxSLnuomxzFXDNcPV1hvCQ==" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/js/tempusdominus-bootstrap-4.min.js" integrity="sha512-k6/Bkb8Fxf/c1Tkyl39yJwcOZ1P4cRrJu77p83zJjN2Z55prbFHxPs9vN7q3l3+tSMGPDdoH51AEU8Vgo1cgAA==" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <style>
+        .title {
+            background-color: #FFA959;
+            font-size: 2.5rem;
+        }
+        
+        .main {
+            background-color: #249F1B;
+        }
+        
+        .sub-title {
+            color: #FFFFFF;
+            font-size: 1.9rem;
+        }
+        
+        .sub-icon {
+            color: #FFFFFF;
+            font-size: 2.5rem;
+        }
+        
+        .content {
+            background-color: #FFFFFF;
+            color: #737474;
+            font-size: 1.2rem;
+        }
+        
+        .btn-setting {
+            background-color: #FFFFFF;
+            color: #249F1B;
+            font-size: 2rem;
+        }
+        
+        .btn-setting:hover {
+            background-color: #FFFFFF;
+            color: #166610;
+            font-size: 2rem;
+        }
+        
+        .btn-outline-warning:not(:disabled):not(.disabled).active,
+        .btn-outline-warning:not(:disabled):not(.disabled):active,
+        .show>.btn-outline-warning.dropdown-toggle,
+        .btn-outline-warning:hover {
+            border-color: #FF9255;
+            background-color: #FF9255;
+            color: #FFFFFF;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 0.275rem 0.75rem;
+            border-radius: 0;
+            line-height: 1;
+        }
+        
+        .btn-outline-warning {
+            color: #FF9255;
+            border-color: #FF9255;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 0.275rem 0.75rem;
+            border-radius: 0;
+            line-height: 1;
+        }
+        
+        .col-8>a:hover {
+            color: #FF9255;
+        }
+        
+        .btn-set {
+            background-color: #F0F0F0;
+            color: #FF7800;
+            font-size: 1.4rem;
+            border-radius: 10px;
+        }
+        
+        .btn-instruction {
+            background-color: #FF7800;
+            color: #FFFFFF;
+            font-size: 1.4rem;
+            border-radius: 10px;
+        }
+
+        .dropdown {
+            padding: 0 5vw;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" style="background-color: white;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="font-size: 4rem; color:#FA8B16">
+                <img src="../images/Group_123.png" alt="" width="10%" class="d-inline-block align-text-top">
+                L.I.F.E
+            </a>
+            <a href="./agent_login.html" style="color: black;"><form class="d-flex">
+                <img src="../images/messageImage_1638594809860-removebg-preview.png" alt="" width="40%">
+                <div>
+                    <span>account</span>
+                    <p>name</p>
+                </div>
+            </form></a>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light" style="font-size: 1.5rem; background-color: #F2F2F2;">
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                        基本資料
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                        your appointment
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Your Calendar</a>
+                        <a class="dropdown-item" href="./appointment.html">你有預約的時間</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">修改你的時間</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                        您的服務
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="./not_service_frame.html">未服務</a>
+                        <a class="dropdown-item" href="./have_service.html">已服務</a>
+                        <a class="dropdown-item" href="./evalution_service.html">我的評價</a>
+                        <a class="dropdown-item" href="./search.html">搜尋服務</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                        會員專區
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">我的資料</a>
+                        <a class="dropdown-item" href="./basic-info-needer.html">照護對象資料</a>
+                        <a class="dropdown-item" href="#">訂單紀錄</a>
+                        <a class="dropdown-item" href="#">評價</a>
+                        <a class="dropdown-item" href="#">通知</a>
+                        <a class="dropdown-item" href="#">平台聯絡資訊</a>
+                        <a class="dropdown-item" href="#">Q&A</a>
+                        <a class="dropdown-item" href="./reserve-1.html">代預約服務</a>
+                        <a class="dropdown-item" href="./credit-card.html">信用卡驗證</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <img src="../images/messageImage_1638599431753-removebg-preview.png" class="nav-item" width="3.5%">
+    </nav>
+    <div class="title font-weight-bold text-center">代預約服務</div>
+    <div class="item row align-items-center justify-content-between m-2">
+        <div class="row col-8 pl-4">
+            <div class="row col">
+                <button type="button" class="btn btn-set font-weight-bold px-4 mr-1">&ensp;&ensp;設定&ensp;&ensp;</button>
+                <button type="button" class="btn btn-instruction font-weight-bold px-4">&ensp;&ensp;說明&ensp;&ensp;</button>
+            </div>
+        </div>
+        <div class="col-4 text-right">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-outline-warning active">
+                  <input type="radio" name="options" id="option1" autocomplete="off" checked> 開啟
+                </label>
+                <label class="btn btn-outline-warning">
+                  <input type="radio" name="options" id="option2" autocomplete="off"> 關閉
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="container main mt-3">
+        <div class="row justify-content-center pt-3">
+            <div class="col-5 row justify-content-center">
+                <div class="col-2 sub-icon text-right align-self-center">
+                    <i class="fas fa-unlock-alt"></i>
+                </div>
+                <div class="col sub-title align-self-center">
+                    透過代碼輕鬆預約服務
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center pt-3">
+            <div class="content rounded m-3 py-3 px-4">
+                <div class="">您可以與任何人共用帳號的預約服務，最多共用人數上限為 3 人，或可升級方案提供代理人數，當您透過代碼共用帳號時，請遵守《L.I.F.E 共用帳號計畫政策》。</div>
+                <div class="py-4">
+                    <p class="font-weight-bold" style="color: #249F1B;">預約流程</p>
+                    <p>步驟 1 ：開啟您的代預約服務</p>
+                    <p>步驟 2 ：設定預約代理人並產生代碼</p>
+                    <p>步驟 3 ：發送代碼簡訊給指定代理人</p>
+                    <p>步驟 4 ：代理人從用戶端透過代碼登入</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center text-center">
+            <div class="col-4 my-4">
+                <button type="button" class="btn btn-setting font-weight-bold rounded-pill px-4">&ensp;&ensp;立即設定&ensp;&ensp;</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

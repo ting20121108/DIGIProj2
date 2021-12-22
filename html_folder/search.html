@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜尋服務</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="..\fontawesome-free-5.15.4\css\all.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <!-- Date Time Picker -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/css/tempusdominus-bootstrap-4.css" integrity="sha512-ClXpwbczwauhl7XC16/EFu3grIlYTpqTYOwqwAi7rNSqxmTqCpE8VS3ovG+qi61GoxSLnuomxzFXDNcPV1hvCQ==" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/js/tempusdominus-bootstrap-4.min.js" integrity="sha512-k6/Bkb8Fxf/c1Tkyl39yJwcOZ1P4cRrJu77p83zJjN2Z55prbFHxPs9vN7q3l3+tSMGPDdoH51AEU8Vgo1cgAA==" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <style>
+        .title {
+            background-color: #FFA959;
+            font-size: 2.5rem;
+        }
+        
+        .sub-title {
+            background-color: #FFC793;
+            font-size: 1.5rem;
+        }
+        
+        .sub-content {
+            background-color: white !important;
+        }
+        
+        .sub-title-gap {
+            background-color: white;
+            height: 0.5rem !important;
+        }
+        
+        .sub-content-gap {
+            background-color: #FFC793;
+        }
+        
+        #category {
+            font-size: 1.4rem;
+        }
+        
+        .btn-search {
+            background-color: #FFA450;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .dropdown {
+            padding: 0 5vw;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" style="background-color: white;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="font-size: 4rem; color:#FA8B16">
+                <img src="../images/Group_123.png" alt="" width="10%" class="d-inline-block align-text-top">
+                L.I.F.E
+            </a>
+            <a href="./agent_login.html" style="color: black;"><form class="d-flex">
+                <img src="../images/messageImage_1638594809860-removebg-preview.png" alt="" width="40%">
+                <div>
+                    <span>account</span>
+                    <p>name</p>
+                </div>
+            </form></a>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light" style="font-size: 1.5rem; background-color: #F2F2F2;">
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                        基本資料
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                        your appointment
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Your Calendar</a>
+                        <a class="dropdown-item" href="./appointment.html">你有預約的時間</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">修改你的時間</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                        您的服務
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="./not_service_frame.html">未服務</a>
+                        <a class="dropdown-item" href="./have_service.html">已服務</a>
+                        <a class="dropdown-item" href="./evalution_service.html">我的評價</a>
+                        <a class="dropdown-item" href="./search.html">搜尋服務</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                        會員專區
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">我的資料</a>
+                        <a class="dropdown-item" href="./basic-info-needer.html">照護對象資料</a>
+                        <a class="dropdown-item" href="#">訂單紀錄</a>
+                        <a class="dropdown-item" href="#">評價</a>
+                        <a class="dropdown-item" href="#">通知</a>
+                        <a class="dropdown-item" href="#">平台聯絡資訊</a>
+                        <a class="dropdown-item" href="#">Q&A</a>
+                        <a class="dropdown-item" href="./reserve-1.html">代預約服務</a>
+                        <a class="dropdown-item" href="./credit-card.html">信用卡驗證</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <img src="../images/messageImage_1638599431753-removebg-preview.png" class="nav-item" width="3.5%">
+    </nav>
+    <div class="title font-weight-bold text-center">
+        <p>搜尋服務</p>
+    </div>
+    <form action="">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-4 sub-title font-weight-bold">服務類別</div>
+                <div class="col sub-content py-2">
+                    <select name="category" id="category">
+                        <option>照護服務1</option>
+                        <option>照護服務2</option>
+                        <option>照護服務3</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row gap">
+                <div class="col-4 sub-title-gap"></div>
+                <div class="col-8 sub-content-gap"></div>
+            </div>
+            <div class="row">
+                <div class="col-4 sub-title font-weight-bold">服務日期</div>
+                <div class="col sub-content py-2">
+                    <div class="row align-item-center">
+                        <div class="input-group date col-3" id="datetimepicker-dateTime" data-target-input="nearest">
+                            <input type="text" class="form-control datetimepicker-input" id="datetimepicker-dateTime" data-toggle="datetimepicker" data-target="#datetimepicker-dateTime">
+                            <div class="input-group-append" data-target="#datetimepicker-dateTime" data-toggle="datetimepicker">
+                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                            </div>
+                        </div>
+                        <div style="font-size: 1.2rem;">(西元 yyyy/mm/dd)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row gap">
+                <div class="col-4 sub-title-gap"></div>
+                <div class="col-8 sub-content-gap"></div>
+            </div>
+            <div class="row">
+                <div class="col-4 sub-title font-weight-bold">時間</div>
+                <div class="col sub-content py-2">
+                    <div class="row align-items-center">
+                        <div class="input-group date col-2" id="datetimepicker7" data-target-input="nearest">
+                            <input type="text" class="form-control datetimepicker-input" id="datetimepicker7" data-toggle="datetimepicker" data-target="#datetimepicker7" />
+                        </div>
+                        <div class="col-1 text-center" style="font-size: 1.2rem;">到</div>
+                        <div class="input-group date col-2" id="datetimepicker8" data-target-input="nearest">
+                            <input type="text" class="form-control datetimepicker-input" id="datetimepicker8" data-toggle="datetimepicker" data-target="#datetimepicker8" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row gap">
+                <div class="col-4 sub-title-gap"></div>
+                <div class="col-8 sub-content-gap"></div>
+            </div>
+            <div class="row">
+                <div class="col-4 sub-title font-weight-bold">約定地點</div>
+                <div class="col sub-content py-2">
+                    <input type="text" name="place" id="">
+                </div>
+            </div>
+            <div class="row gap">
+                <div class="col-4 sub-title-gap"></div>
+                <div class="col-8 sub-content-gap"></div>
+            </div>
+            <div class="row">
+                <div class="col-4 sub-title font-weight-bold">服務內容</div>
+                <div class="col sub-content py-2">
+                    <textarea name="describe" id="" cols="95" rows="5"></textarea>
+                </div>
+            </div>
+            <div class="row sub-title py-3"></div>
+            <div class="row justify-content-center p-5">
+                <div class="col-2">
+                    <a href="./search-result.html"><button type="button" class="btn btn-search btn-warning btn-block font-weight-bold rounded-pill">搜尋服務</button></a>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript">
+        $(function() {
+            $('#datetimepicker-dateTime').datetimepicker({
+                format: 'L',
+                format: '[西元] YYYY/MM/DD',
+                dayViewHeaderFormat: 'MMM YYYY'
+            });
+            $('#datetimepicker7').datetimepicker({
+                format: 'LT',
+                format: 'hh A',
+            });
+            $('#datetimepicker8').datetimepicker({
+                format: 'LT',
+                format: 'hh A',
+                useCurrent: false
+            });
+            $("#datetimepicker7").on("change.datetimepicker", function(e) {
+                $('#datetimepicker8').datetimepicker('minDate', e.date);
+            });
+            $("#datetimepicker8").on("change.datetimepicker", function(e) {
+                $('#datetimepicker7').datetimepicker('maxDate', e.date);
+            });
+        });
+    </script>
+</body>
+
+</html>
