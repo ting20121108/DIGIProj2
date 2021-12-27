@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代預約服務</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="..\fontawesome-free-5.15.4\css\all.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="switch.css">
+    <style>
+        .title {
+            background-color: #FFA959;
+            font-size: 2.5rem;
+        }
+        
+        .main {
+            background-color: #249F1B;
+        }
+        
+        .sub-title {
+            color: #FF8C40;
+            font-size: 1.9rem;
+        }
+        
+        .sub-icon {
+            color: #FFFFFF;
+            font-size: 2.5rem;
+        }
+        
+        .content {
+            background-color: #FFFFFF;
+            color: #737474;
+            font-size: 1.2rem;
+        }
+        
+        .btn-outline-warning:not(:disabled):not(.disabled).active,
+        .btn-outline-warning:not(:disabled):not(.disabled):active,
+        .show>.btn-outline-warning.dropdown-toggle,
+        .btn-outline-warning:hover {
+            border-color: #FF9255;
+            background-color: #FF9255;
+            color: #FFFFFF;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 0.275rem 0.75rem;
+            border-radius: 0;
+            line-height: 1;
+        }
+        
+        .btn-outline-warning {
+            color: #FF9255;
+            border-color: #FF9255;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 0.275rem 0.75rem;
+            border-radius: 0;
+            line-height: 1;
+        }
+        
+        .col-8>a:hover {
+            color: #FF9255;
+        }
+        
+        .btn-instruction {
+            background-color: #F0F0F0;
+            color: #FF7800;
+            font-size: 1.4rem;
+            border-radius: 10px;
+        }
+        
+        .btn-set {
+            background-color: #FF7800;
+            color: #FFFFFF;
+            font-size: 1.4rem;
+            border-radius: 10px;
+        }
+        
+        .divider {
+            background-color: #afafaf;
+            height: 2px;
+        }
+        
+        .plus {
+            background-color: #FF7800;
+            width: 50px;
+            height: 50px;
+        }
+        
+        .plus>i {
+            font-size: 2rem;
+            color: #FFFFFF;
+            line-height: 1.6;
+        }
+        
+        .appoint {
+            background-color: #FFDDC7;
+        }
+        
+        .fa-paper-plane {
+            font-size: 2.5rem;
+            color: #FFFFFF;
+            line-height: 2;
+        }
+        
+        .calendar {
+            color: #FFDDC7;
+            font-size: 2rem;
+        }
+        
+        .nav,
+        .btn-link {
+            font-size: 2rem !important;
+        }
+        
+        .arrow,
+        .btn-link {
+            color: #737474;
+        }
+        
+        .btn-link:hover {
+            color: #474747;
+        }
+        
+        .today {
+            color: #FFFFFF;
+            background-color: #FF7800;
+            border-radius: 30px;
+        }
+        
+        .table thead th {
+            vertical-align: bottom;
+            border-bottom: 2px solid #dee2e6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title font-weight-bold text-center">代預約服務</div>
+    <div class="row align-items-center justify-content-between m-2">
+        <div class="row col-8 pl-4">
+            <div class="row col">
+                <button type="button" class="btn btn-set font-weight-bold px-4 mr-1">&ensp;&ensp;設定&ensp;&ensp;</button>
+                <button type="button" class="btn btn-instruction font-weight-bold px-4">&ensp;&ensp;說明&ensp;&ensp;</button>
+            </div>
+        </div>
+        <div class="col-4 text-right">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-outline-warning active">
+                  <input type="radio" name="options" id="option1" autocomplete="off" checked> 開啟
+                </label>
+                <label class="btn btn-outline-warning">
+                  <input type="radio" name="options" id="option2" autocomplete="off"> 關閉
+                </label>
+            </div>
+        </div>
+    </div>
+    <hr class="divider">
+    <div class="container-fluid">
+        <div class="row mx-3 justify-content-between">
+            <div class="col-4 sub-title font-weight-bold ">指定代理人</div>
+            <div class="rounded-circle plus text-center"><i class="fas fa-plus"></i></div>
+        </div>
+        <div class="row m-3 pt-2 appoint justify-content-between">
+            <div>
+                <ul>
+                    <li class="font-weight-bold " style="font-size: 1.4rem; color:#575757;">
+                        <div class="row pl-3">
+                            大女兒
+                            <div class="can-toggle demo-rebrand-2 pl-2">
+                                <input id="e" type="checkbox">
+                                <label for="e">
+                                  <div class="can-toggle__switch" data-checked="OFF" data-unchecked="ON"></div>
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                    <dd style="font-size: 1.2rem; color:#8f8f8f;">
+                        代碼：abcd26107941853
+                    </dd>
+                </ul>
+
+            </div>
+            <div class="text-center px-4"><i class="far fa-paper-plane"></i></div>
+        </div>
+    </div>
+    <hr class="divider">
+    <div class="container-fluid">
+        <div class="row mx-3 justify-content-between">
+            <div class="col-4 sub-title font-weight-bold ">代預約紀錄</div>
+            <div class="text-center calendar pr-4"><i class="fas fa-calendar-alt"></i></div>
+        </div>
+        <div class="container m-3 pt-2 text-center mx-auto">
+            <div class="nav row justify-content-between">
+                <div id="mon-year" class="col-6 text-left font-weight-bold"></div>
+                <div class="col-2 text-right arrow row justify-content-around">
+                    <button class="btn btn-link" id="previous"><i class="fas fa-chevron-left"></i></button>
+                    <button class="btn btn-link" id="next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <table class="table table-borderless" id="calendar">
+                <thead class="content">
+                    <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                </thead>
+                <tbody id="calendar-body" class="content"></tbody>
+            </table>
+        </div>
+    </div>
+    <hr class="divider">
+    <div class="container-fluid">
+        <div class="row mx-3 justify-content-between">
+            <div class="col-4 sub-title font-weight-bold ">陪伴複診</div>
+        </div>
+        <div class="m-3 pt-2 justify-content-between">
+            <div class="row mx-4">
+                <div class="col-6 content"><i class="fas fa-user-clock"></i> 大女兒</div>
+                <div class="col-6 content"><i class="fas fa-map-marker-alt"></i> 萬芳醫院</div>
+            </div>
+            <div class="row mx-4 pt-4">
+                <div class="col-6 content"><i class="far fa-clock"></i> PM 13-16</div>
+                <div class="col-6 content"><i class="fas fa-align-justify"></i> 掛身心科68號</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+    today = new Date();
+    currentMonth = today.getMonth();
+    currentYear = today.getFullYear();
+
+    months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    monthAndYear = document.getElementById("mon-year");
+    showCalendar(currentMonth, currentYear);
+    document.getElementById("next").addEventListener("click", next);
+    document.getElementById("previous").addEventListener("click", previous);
+
+    function next() {
+        currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
+        currentMonth = (currentMonth + 1) % 12;
+        showCalendar(currentMonth, currentYear);
+    }
+
+    function previous() {
+        currentYear = (currentMonth === 0) ? currentYear - 1 : currentYear;
+        currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
+        showCalendar(currentMonth, currentYear);
+    }
+
+    function showCalendar(month, year) {
+
+        let firstDay = (new Date(year, month)).getDay();
+
+        tbl = document.getElementById("calendar-body"); // body of the calendar
+
+        // clearing all previous cells
+        tbl.innerHTML = "";
+
+        // filing data about month and in the page via DOM.
+        monthAndYear.innerHTML = months[month] + " " + year;
+
+        // creating all cells
+        let date = 1;
+        for (let i = 0; i < 6; i++) {
+            // creates a table row
+            let row = document.createElement("tr");
+
+            //creating individual cells, filing them up with data.
+            for (let j = 0; j < 7; j++) {
+                if (i === 0 && j < firstDay) {
+                    cell = document.createElement("td");
+                    cellText = document.createTextNode("");
+                    cell.appendChild(cellText);
+                    row.appendChild(cell);
+                } else if (date > daysInMonth(month, year)) {
+                    break;
+                } else {
+                    cell = document.createElement("td");
+                    cellText = document.createTextNode(date);
+                    if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
+                        cell.classList.add("today");
+                    } // color today's date
+                    cell.appendChild(cellText);
+                    row.appendChild(cell);
+                    date++;
+                }
+
+
+            }
+
+            tbl.appendChild(row); // appending each row into calendar body.
+        }
+
+    }
+
+
+    // check how many days in a month code from https://dzone.com/articles/determining-number-days-month
+    function daysInMonth(iMonth, iYear) {
+        return 32 - new Date(iYear, iMonth, 32).getDate();
+    }
+</script>
+
+</html>
