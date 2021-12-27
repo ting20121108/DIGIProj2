@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改時間</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="..\fontawesome-free-5.15.4\css\all.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <!-- Date Time Picker -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/css/tempusdominus-bootstrap-4.css" integrity="sha512-ClXpwbczwauhl7XC16/EFu3grIlYTpqTYOwqwAi7rNSqxmTqCpE8VS3ovG+qi61GoxSLnuomxzFXDNcPV1hvCQ==" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/js/tempusdominus-bootstrap-4.min.js" integrity="sha512-k6/Bkb8Fxf/c1Tkyl39yJwcOZ1P4cRrJu77p83zJjN2Z55prbFHxPs9vN7q3l3+tSMGPDdoH51AEU8Vgo1cgAA==" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <style>
+        .title {
+            background-color: #FFA959;
+            font-size: 2.5rem;
+        }
+        
+        .sub-title {
+            color: #6DC267;
+            font-size: 1.2rem;
+        }
+        
+        .sub-content {
+            color: #737474;
+        }
+        
+        .btn {
+            color: #737474;
+            font-size: 1.5rem;
+        }
+        
+        .btn-link:hover {
+            color: #494949;
+        }
+        
+        .content {
+            font-size: 2rem;
+        }
+        
+        .sub-link {
+            font-size: 2rem;
+            color: #FF7800 !important;
+        }
+        
+        .btn-block {
+            background-color: #FFA959;
+            color: black;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title font-weight-bold text-center">修改時間</div>
+    <div class="container">
+        <div class="accordion" id="accordionAppointment1">
+            <div class="card my-4">
+                <div class="card-header" id="headingApponit">
+                    <h2 class="mb-0 pl-2 font-weight-bold row justify-content-between">
+                        預約
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseAppointment1" aria-expanded="true" aria-controls="collapseAppointment1">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseAppointment1" class="collapse show" aria-labelledby="headingApponit" data-parent="#accordionAppointment1">
+                    <div class="card-body row">
+                        <div class="col-6 content">日期：2019 - 07 - 24 &ensp;&ensp;(三)</div>
+                        <div class="col-6 text-right">
+                            <a href="#" class="sub-link">修改</a>
+                        </div>
+                        <div class="col content">時間：上午10點 - 上午12點</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion" id="accordionRest">
+            <div class="card my-4">
+                <div class="card-header" id="headingRest">
+                    <h2 class="mb-0 pl-2 font-weight-bold row justify-content-between">
+                        公休
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseRest" aria-expanded="true" aria-controls="collapseRest">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseRest" class="collapse show" aria-labelledby="headingRest" data-parent="#accordionRest">
+                    <div class="card-body row">
+                        <div class="col-6 content">日期：2019 - 07 - 31 &ensp;&ensp;(三)</div>
+                        <div class="col-6 text-right">
+                            <a href="#" class="sub-link">修改</a>
+                        </div>
+                        <div class="col content">時間：上午10點 - 上午12點</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion" id="accordionAppointment2">
+            <div class="card my-4">
+                <div class="card-header" id="headingApponit2">
+                    <h2 class="mb-0 pl-2 font-weight-bold row justify-content-between">
+                        預約
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseAppointment2" aria-expanded="true" aria-controls="collapseAppointment2">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseAppointment2" class="collapse show" aria-labelledby="headingApponit2" data-parent="#accordionAppointment2">
+                    <div class="card-body row">
+                        <div class="col-6 content">日期：2019 - 08 - 02 &ensp;&ensp;(一)</div>
+                        <div class="col-6 text-right">
+                            <a href="#" class="sub-link">修改</a>
+                        </div>
+                        <div class="col content">時間：上午8點 - 下午4點</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center p-5">
+            <div class="col-2">
+                <button type="button" class="btn btn-block font-weight-bold">新增</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
